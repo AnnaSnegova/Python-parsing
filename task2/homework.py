@@ -10,6 +10,23 @@ url_part2 = '?page=1'
 url_all = URL+url_part1+url_part2
 
 
+class Parser:
+	target_domain  = "grid.ac"
+	target_path    = "institutes/"
+	target_request = "page"
+
+	def __init__(self):
+		pass
+
+	def get_target(self):
+		return "https://{}/{}?{}".format(
+				self.target_domain,
+				self.target_path,
+				self.target_request,
+			)
+
+
+
 def main():
 	get_json(get_html(url_all))
 
